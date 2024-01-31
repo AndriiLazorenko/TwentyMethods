@@ -76,5 +76,78 @@ public class Main {
         // начиная с конца массива. Если значения в массиве нет возвращает -1
         System.out.println("9. findIndexOfMatchingIntValueInArrayStartingFromArrayEnd");
         System.out.println("Value is " + TwentyMethods.findIndexOfMatchingIntValueInArrayStartingFromArrayEnd(new int[]{5, 4, 3, 2, 1}, 1));
+
+        //10.1) метод принимает инт, и возвращает факториал от заданого инта
+        System.out.println("10.1 getFactorialFromInt");
+        System.out.println("Value is " + TwentyMethods.getFactorialFromIntFirst(10));
+
+        //10.2) метод принимает инт, и возвращает факториал от заданого инта
+        System.out.println("10.2 getFactorialFromInt");
+        System.out.println("Value is " + TwentyMethods.getFactorialFromIntSecond(5));
+
+        //11) принимает инт год, и возвращает тру если год высокосный
+        System.out.println("11.leapCheckYears");
+        System.out.println("Year for check: " + TwentyMethods.leapCheckYears(2024));
+
+        //12) приминает массив интов и число, выводит на екран только елементы массива которые кратны этому числу
+        System.out.println("12. displayAllValuesInIntWithArrMultiplesOfValues");
+        TwentyMethods.takeMultiplesIntToScreenFirst(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 19, 129, 100, -1, -2}, 2);
+
+        //13) метод принимает массив интов сортирует его по возрастанию
+        System.out.println();
+        System.out.println("13.1 sortArrayInIncreasing");
+        int[] arr = new int[]{1, 3, 3, 3, 2, 35, 7, 8};
+        System.out.println("Initial array: ");
+        printIntArray(arr);
+        System.out.println();
+        System.out.println("Sorted array: ");
+        TwentyMethods.sortArrayInIncreasingFirst(arr);
+        printIntArray(arr);
+
+        //13.2) метод принимает массив интов сортирует его по возрастанию (Сортировка)
+        System.out.println();
+        System.out.println("13.2 sortArrayInIncreasingWithSorting");
+        int[] arrSorting = new int[]{3, 4, 1, 2, 6, 9, 10000};
+        System.out.println("Initial array: ");
+        printIntArray(arrSorting);
+        System.out.println();
+        System.out.println("Sorted array: ");
+        TwentyMethods.sortArrayInIncreasingSorting(arrSorting);
+        printIntArray(arrSorting);
+
+        //13.3) метод принимает массив интов сортирует его по возрастанию (
+        System.out.println();
+        System.out.println("13.3 sortArrayInIncreasingWithBubbleSort");
+        int[] arrBubble = new int[]{90, 4, 1, 2, 6, 9, 10000, 3};
+        System.out.println("Initial array: ");
+        printIntArray(arrBubble);
+        System.out.println();
+        System.out.println("Sorted array: ");
+        TwentyMethods.sortArrayInIncreasingSorting(arrBubble);
+        printIntArray(arrBubble);
+
+        //13.4) Insertion Sort метод принимает массив интов сортирует его по возрастанию
+        System.out.println();
+        System.out.println("13.4 sortArrayInIncreasingWithInsertionSort");
+        int[] arrInsertion = new int[]{900, 4000, 100000, 20, 60, 9, 10000, 3000000};
+        System.out.println("Initial array: ");
+        printIntArray(arrInsertion);
+        System.out.println();
+        System.out.println("Sorted array: ");
+        TwentyMethods.sortArrayInIncreasingSorting(arrInsertion);
+        printIntArray(arrInsertion);
+
+
+    }
+
+    private static void printIntArray(int[] arr) {
+        System.out.print("[");
+        for (int i = 0; i < arr.length; i++) {
+            if (i > 0) {
+                System.out.print(", ");
+            }
+            System.out.print(arr[i]);
+        }
+        System.out.print("]");
     }
 }

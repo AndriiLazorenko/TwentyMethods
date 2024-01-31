@@ -1,5 +1,7 @@
 package twentymethods;
 
+import java.util.Arrays;
+
 public class TwentyMethods {
 
     //1 принимает массив чаров, выводит его на экран
@@ -122,5 +124,84 @@ public class TwentyMethods {
             }
         }
         return -1;
+    }
+
+    //10.1) метод принимает инт, и возвращает факториал от заданого инта \
+    public static int getFactorialFromIntFirst(int number) {
+        int result = 1;
+        for (int i = 1; i <= number; i++) {
+            result = result * i;
+        }
+        return result;
+    }
+
+    //10.2) метод принимает инт, и возвращает факториал от заданого инта \
+    public static int getFactorialFromIntSecond(int n) {
+        int result;
+        if (n == 1)
+            return 1;
+        result = getFactorialFromIntSecond(n - 1) * n;
+        return result;
+    }
+
+    //11) принимает инт год, и возвращает тру если год высокосный
+    public static boolean leapCheckYears(int year) {
+        return ((year % 4 == 0) || (year % 100 == 0));
+    }
+
+    //12) приминает массив интов и число, выводит на екран только елементы массива которые кратны этому числу
+    public static void takeMultiplesIntToScreenFirst(int[] ints, int value) {
+        int correctNumber = 0;
+        for (int i : ints) {
+            if (i % value == 0) {
+                correctNumber++;
+                System.out.printf(i + " ");
+            }
+        }
+    }
+
+
+    //13.1) метод принимает массив интов сортирует его по возрастанию
+    public static int[] sortArrayInIncreasingFirst(int[] arr) {
+        Arrays.sort(arr);
+        return arr;
+    }
+
+    //13.2) Sorting метод принимает массив интов сортирует его по возрастанию
+    public static void sortArrayInIncreasingSorting(int[] arrSorting) {
+        for (int i = 0; i < arrSorting.length; i++) {
+            int position = i;
+            int min = arrSorting[i];
+            for (int j = i + 1; j < arrSorting.length; j++) {
+                if (arrSorting[j] < min) {
+                    position = j;
+                    min = arrSorting[j];
+                }
+            }
+            arrSorting[position] = arrSorting[i];
+            arrSorting[i] = min;
+        }
+    }
+
+    //13.3) Bubble sort метод принимает массив интов сортирует его по возрастанию
+    public static void sortArrayInIncreasingBubble(int[] arrBubble) {
+            for (int i = 1; i < arrBubble.length; i++) {
+                if (arrBubble[i] < arrBubble[i - 1]) {
+                    int temp = arrBubble[i];
+                    arrBubble[i] = arrBubble[i - 1];
+                    arrBubble[i - 1] = temp;
+                }
+            }
+        }
+    //13.4) Insertion Sort метод принимает массив интов сортирует его по возрастанию
+    public static void sortArrayInIncreasingInsertion (int[] arrInsertion){
+        int j;
+        for (int i = 1; i <arrInsertion.length; i++){
+            int temp = arrInsertion[i];
+            for (j = i; j > 0 && temp < arrInsertion[j - 1]; j--){
+                arrInsertion[j] = arrInsertion[j-1];
+            }
+            arrInsertion[j] = temp;
+        }
     }
 }

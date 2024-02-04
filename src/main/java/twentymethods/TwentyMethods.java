@@ -63,7 +63,6 @@ public class TwentyMethods {
     //4.3
     public static int findMaxOfThreeIntsThirdMethod(int a, int b, int c) {
         int max = (a > b) ? a : b;
-        //  max = (max > c) ? max : c;
         max = findMaxOfTwoIntsFirstMethod(max, c);
         return max;
     }
@@ -145,30 +144,27 @@ public class TwentyMethods {
     }
 
     //11) принимает инт год, и возвращает тру если год высокосный
-    public static boolean leapCheckYears(int year) {
-        return ((year % 4 == 0) || (year % 100 == 0));
+    public static boolean isLeap(int year) {
+        return ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0));
     }
 
     //12) приминает массив интов и число, выводит на екран только елементы массива которые кратны этому числу
-    public static void takeMultiplesIntToScreenFirst(int[] ints, int value) {
-        int correctNumber = 0;
+    public static void displayMultiplesInArrayForGivenValue(int[] ints, int value) {
         for (int i : ints) {
             if (i % value == 0) {
-                correctNumber++;
                 System.out.printf(i + " ");
             }
         }
     }
 
-
     //13.1) метод принимает массив интов сортирует его по возрастанию
-    public static int[] sortArrayInIncreasingFirst(int[] arr) {
+    public static int[] sortArrayInIncreasingOrderFirst(int[] arr) {
         Arrays.sort(arr);
         return arr;
     }
 
     //13.2) Sorting метод принимает массив интов сортирует его по возрастанию
-    public static void sortArrayInIncreasingSorting(int[] arrSorting) {
+    public static void sortArrayInIncreasingOrderSecond(int[] arrSorting) {
         for (int i = 0; i < arrSorting.length; i++) {
             int position = i;
             int min = arrSorting[i];
@@ -184,24 +180,25 @@ public class TwentyMethods {
     }
 
     //13.3) Bubble sort метод принимает массив интов сортирует его по возрастанию
-    public static void sortArrayInIncreasingBubble(int[] arrBubble) {
-            for (int i = 1; i < arrBubble.length; i++) {
-                if (arrBubble[i] < arrBubble[i - 1]) {
-                    int temp = arrBubble[i];
-                    arrBubble[i] = arrBubble[i - 1];
-                    arrBubble[i - 1] = temp;
-                }
+    public static void sortInIncreasingOrderWithBubbleSorting(int[] ints) {
+        for (int i = 1; i < ints.length; i++) {
+            if (ints[i] < ints[i - 1]) {
+                int temp = ints[i];
+                ints[i] = ints[i - 1];
+                ints[i - 1] = temp;
             }
         }
+    }
+
     //13.4) Insertion Sort метод принимает массив интов сортирует его по возрастанию
-    public static void sortArrayInIncreasingInsertion (int[] arrInsertion){
+    public static void sortArrayInIncreasingOrderWithInsertion(int[] ints) {
         int j;
-        for (int i = 1; i <arrInsertion.length; i++){
-            int temp = arrInsertion[i];
-            for (j = i; j > 0 && temp < arrInsertion[j - 1]; j--){
-                arrInsertion[j] = arrInsertion[j-1];
+        for (int i = 1; i < ints.length; i++) {
+            int temp = ints[i];
+            for (j = i; j > 0 && temp < ints[j - 1]; j--) {
+                ints[j] = ints[j - 1];
             }
-            arrInsertion[j] = temp;
+            ints[j] = temp;
         }
     }
 }

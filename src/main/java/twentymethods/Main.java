@@ -145,6 +145,16 @@ public class Main {
         TwentyMethods.sortArrayInIncreasingOrderWithInsertion(arrInsertion);
         printIntArray(arrInsertion);
 
+        //14) принимает массив байт, если в массиве есть повторяющиеся елементы, возвращает тру
+        System.out.println();
+        System.out.println("14. findDuplicateObject");
+        System.out.println("The array has duplicates: " + TwentyMethods.findDuplicateObject(new byte[]{1, 2, 4, 5, 1}));
+
+        //14.1) принимает массив байт, если в массиве есть повторяющиеся елементы, возвращает тру
+        System.out.println();
+        System.out.println("14.1 findDuplicateObject");
+        System.out.println("The array has duplicates: " + TwentyMethods.findDuplicateObjectWithSorting(new byte[]{1, 2, 4, 5, 1}));
+
     }
 
     private static void printIntArray(int[] arr) {

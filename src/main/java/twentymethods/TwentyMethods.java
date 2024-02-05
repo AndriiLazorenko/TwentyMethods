@@ -201,4 +201,29 @@ public class TwentyMethods {
             ints[j] = temp;
         }
     }
+
+    //14) принимает массив байт, если в массиве есть повторяющиеся елементы, возвращает тру
+    public static boolean findDuplicateObject(byte[] bytes) {
+        for (int i = 0; i < bytes.length; i++) {
+            for (int j = i + 1; j < bytes.length; j++)
+                if (bytes[i] == bytes[j]) {
+                    return true;
+                }
+        }
+        return false;
+    }
+
+    //14.1) принимает массив байт, если в массиве есть повторяющиеся елементы, возвращает тру
+    public static boolean findDuplicateObjectWithSorting(byte[] bytes) {
+        Arrays.sort(bytes);
+        int i = 0;
+        while (i <= bytes.length) {
+            if (bytes[i] == bytes[i + 1]) {
+                return true;
+            }
+            i++;
+        }
+        return false;
+    }
+
 }
